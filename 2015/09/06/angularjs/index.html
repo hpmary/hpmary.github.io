@@ -1,34 +1,364 @@
-extends partial/layout
+<!DOCTYPE html>
+<html lang="en">
 
-block site_title
-  != page.title + " | " + config.title
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="null">
+    <meta name="keyword" content="undefined">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="Hexo" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        angularjs｜undefined
+        
+    </title>
 
-block description
-  - var desc = page.desc || page.title + ' - ' + config.author;
-  meta(name="description", content=desc)
+    <link rel="canonical" href="http://yoursite.com/2015/09/06/angularjs/">
 
-block header
-  header.site-header
-    .site-nav
-      span.button-toggle
-      include partial/nav
-      form#search-form.nav-item
-        input(type="text" id="local-search-input" name="q" results="0" placeholder=__('search') class="search form-control" autocomplete="off" autocorrect="off")
-        span.fa.fa-times(onclick="resetSearch()") 
-      div#local-search-result
-      p.no-result No results found
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
 
-block content
-  include mixins/post
-  +post(page)
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
 
-block sidebar
-  include partial/sidebar
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
 
-block pagination
-  include mixins/paginator
-  +post()
-  include partial/comment
+<style>
 
-block copyright
-  include partial/footer
+    header.intro-header {
+        background-image: url('undefined')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    Hexo
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>angularjs</h1>
+                    
+                    <span class="meta">
+                         作者 滑爱美
+                        <span>
+                          日期 2015-09-06
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            angularjs
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><p>1、单页面应用程序：多个页面重复应用的东西，不会被多次加载，只加载页面中可改变的内容<br>2、解析链接地址<br>【1】在后台输入 window.location 回车 ，打印出 可以获取链接地址内容的属性</p>
+<p>【2】在后台创建 一个 a 标签 ，<br>     var  a=document.createElement(“a”);<br>            a.href=”地址”；<br>           a.属性就能获取到链接地址的内容<br>var a=document.createElement(“a”);<br>undefined<br>a.href=”<a href="http://www.cnblogs.com/leejersey/p/3801452.html" target="_blank" rel="external">http://www.cnblogs.com/leejersey/p/3801452.html</a>“<br>“<a href="http://www.cnblogs.com/leejersey/p/3801452.html" target="_blank" rel="external">http://www.cnblogs.com/leejersey/p/3801452.html</a>“<br>a.hash 锚点名<br>“”<br>a.host 端口号<br>“www.cnblogs.com”<br>a.hostname<br>“www.cnblogs.com”<br>a.origin<br>“<a href="http://www.cnblogs.com" target="_blank" rel="external">http://www.cnblogs.com</a>“<br>a.port<br>“”<br>a.pathname<br>“/leejersey/p/3801452.html”<br>a.protocol 协议<br>“http:”<br>a.search 字符串<br>“”</p>
+<p>3、指令<br>【1.】 ng-app 在 ng 中被称之为一个指令<br>      该指令的作用就是用来指定 ng 应用程序的入口范围的<br>      只有作用了该指令的元素及该元素内部所有子节点都可以直接使用 ng 所有的规则特性<br>      注意：一页页面只有一个 ng-app 入口标识<br>            建议挂载到刚好够用的范围上，一般就是 body 即可<br>ng-controller=”LoginController”   绑定控制器函数<br>【2】ng-model 在 ng 中也被称之为一个指令<br>    该指令一般用于和表单控件（input、text、checkbox、radio、select、textarea。。）进行模型数据绑定，<br>    双向数据绑定：<br>      这里就是将对象中的 foo 属性绑定到了 input 的 value 上<br>      当 input 的 value 改变的时候，数据对象上的 foo 也跟着变<br>      当 数据对象上的 value 发生改变的时候，把所有引用或者绑定了我 foo 属性的地方同步改变过去<br>【3】 ng-bind 可以解决表达式闪烁的问题<br>    表达式如何使用，ng-bind 就如何使用</p>
+<pre><code>1. 引包
+2. 设置 ng-app 入口标识
+
+1. 当 ng 启动的时候，找到 ng-app
+2. ng 自动创建一个对象（目前还看不到）
+3. ng 发现 body 上有一个 ng-init 指令，该指令表示在对象中添加一个属性：foo = &apos;bar&apos;
+</code></pre><p>【4】控制器<br>ng-controller=”LoginController”   绑定控制器函数<br> 控制器就是给局部的 HTML 添加一个数据模型作用域，<br>    该内部的 HTML 只能访问自己所属的控制器上的模型数据成员</p>
+<ol>
+<li>根据视图初始化模型成员<ol>
+<li>然后做对应的业务处理<br>这个函数一般被称之为控制器函数：用来控制视图和数据模型的交互处理的<br>用法：第一：在创建的时候，建议控制器函数的名字和普通函数区分一下，采用 Pascal 命名法 + Controller 用来加以区分<br>   第二：创建完毕之后，在 HTML 中通过 ng-controller 指令将控制器和对应的 HTML 做一个绑定处理，这样话作用了该控制器节点的 HTML 以及内部所有的子节点就都可以访问控制器中的数据模型成员了<br>   第三：控制器函数必须全局函数，而且参数名必须叫：$scope，否则直接报错</li>
+</ol>
+</li>
+</ol>
+<p>/**</p>
+<ul>
+<li>控制器函数：用来控制视图和模型数据的交互</li>
+<li>控制器可以为局部的 HTML 添加数据模型作用域，只作用于该 HTML 片段</li>
+<li>如何划分控制器？</li>
+<li>根据你的不同的业务功能去划分你的控制器</li>
+<li>如果一个页面全局控制器函数太多，会导致全局命名空间污染。或者控制器被覆盖的问题</li>
+<li>在 ng 1.3 之前，是可以写全局控制器的</li>
+<li>但是在 ng 1.3 之后，就不再有这种写法<br>*/</li>
+</ul>
+<p> ng 提供了一种模块化解决方案，可以有效的解决全局控制器污染问题</p>
+<pre><code> 1. 创建模块
+    注意：第二个参数一定要给一个空数组
+          如果不传递第二个参数，表示获取一个模块
+var app = angular.module(&apos;app&apos;, [])
+module括号里面的 名字起得是什么，页面内 ng-app 就得等于啥
+</code></pre><p>例如<br>angular.module(‘app’, [])<br>ng-app=”app”</p>
+<pre><code>// 2. 给模块添加控制器
+app.controller(&apos;LoginController&apos;, function ($scope) {
+  $scope.username = &apos;login&apos;
+})
+
+app.controller(&apos;RegisterController&apos;, function ($scope) {
+  $scope.username = &apos;register&apos;
+})
+</code></pre><p>【5】<br>g-submit 作用域表单元素上<br>                          当表单提交的时候，会触发 submit 事件，然后执行对应的处理函数<br>                          只有两种情况会提交触发这个 submit 事件：</p>
+<pre><code>1. 表单中具有 submit 类型的 input 可以提交
+  2. 表单中在某个表单控制上按回车也可以提交表单
+</code></pre><p>【6】ng-class 指令专门可以解决样式的问题<br>                          ng-class=”{css类名: bool}”<br>                          当 bool 为 true，作用 css类<br>                          当 bool 为 false，取消 css 类</p>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/03/06/hello-world/" data-toggle="tooltip" data-placement="top"
+                           title="Hello World">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本介绍"><span class="toc-text">基本介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本使用"><span class="toc-text">基本使用</span></a></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Hexo 2017
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','undefined','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="undefined">
+</body>
+
+</html>
